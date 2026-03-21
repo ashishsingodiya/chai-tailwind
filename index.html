@@ -16,22 +16,16 @@
       <h1 class="chai-text-orange chai-capitalize chai-font-bold chai-text-center chai-m-0">Welcome to chai tailwind</h1>
       <div class="chai-text-orange">-------------------------------------------</div>
       <p class="chai-text-gray">This page is made using chai tailwind</p>
-      <button class="chai-bg-orange chai-text-white chai-p-12 chai-rounded-full chai-font-semibold chai-shadow-md chai-cursor-pointer chai-capitalize">try below ⬇️</button>
+      <button class="chai-bg-orange chai-text-white chai-px-12 chai-py-6 chai-rounded-full chai-shadow-md chai-cursor-pointer chai-capitalize">try below</button>
     </section>
 
     <section class="chai-w-75 chai-mx-auto chai-mt-24 chai-border-2 chai-border-gray chai-rounded-lg chai-shadow-lg chai-overflow-hidden">
-      <h2 class="chai-bg-gray chai-p-10 chai-m-0 chai-font-semibold chai-text-center">Chai Playground</h2>
+      <h2 class="chai-bg-gray chai-p-10 chai-m-0 chai-font-semibold chai-text-center chai-text-white">Chai Playground</h2>
 
       <div class="chai-grid chai-grid-cols-2 chai-min-h-400">
         <div>
           <p class="chai-m-0 chai-p-10 chai-bg-white">HTML Editor</p>
-          <textarea id="chai-playground-input" class="chai-p-12 chai-border-r chai-border-gray chai-min-h-400 chai-w-90">
-<div class="chai-p-16 chai-border-2 chai-border-orange chai-rounded-md chai-m-10 chai-flex chai-flex-col chai-items-center">
-  <h3 class="chai-text-orange chai-m-0">Hello from Playground</h3>
-  <p class="chai-text-gray chai-mt-10">Edit this HTML on the left side.</p>
-  <button class="chai-bg-orange chai-text-white chai-px-12 chai-py-8 chai-rounded-full chai-mt-10">Try Now</button>
-</div>
-          </textarea>
+          <div id="editor-container" class="chai-border-r chai-border-gray chai-min-h-400"></div>
         </div>
 
         <div>
@@ -49,6 +43,7 @@
       </p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
     <script type="module" src="main.js"></script>
   </body>
 </html>
