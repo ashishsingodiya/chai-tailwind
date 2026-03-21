@@ -31,7 +31,7 @@ function setupPlayground() {
 
   const renderPreview = (code) => {
     const previewDoc = preview.contentDocument || preview.contentWindow?.document;
-    const html = `<!DOCTYPE html> <html> <head></head><body>${code}</body> </html>`;
+    const html = `<!DOCTYPE html> <html> <head><style>*{font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;}</style></head><body>${code}</body> </html>`;
     previewDoc.open();
     previewDoc.write(html);
     previewDoc.close();
