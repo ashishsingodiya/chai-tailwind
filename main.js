@@ -22,7 +22,8 @@ applyChaiClassesToDoc(document);
 
 function setupPlayground() {
   const preview = document.getElementById("chai-playground-preview");
-  const defaultHtml = `<div class="chai-p-16 chai-border-2 chai-border-orange chai-rounded-md chai-m-10 chai-flex chai-flex-col chai-items-center">
+  const defaultHtml = `<div
+  class="chai-p-16 chai-border-2 chai-border-orange chai-rounded-md chai-m-10 chai-flex chai-flex-col chai-items-center">
   <h3 class="chai-text-orange chai-m-0">Hello from Playground</h3>
   <p class="chai-text-gray chai-mt-10">Edit this HTML on the left side.</p>
   <button class="chai-bg-orange chai-text-white chai-px-12 chai-py-8 chai-rounded-full chai-mt-10">Try Now</button>
@@ -40,6 +41,31 @@ function setupPlayground() {
   require.config({ paths: { vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs" } });
 
   require(["vs/editor/editor.main"], function () {
+    monaco.languages.registerCompletionItemProvider("html", {
+      provideCompletionItems: function (model, position) {
+        const word = model.getWordUntilPosition(position);
+        const range = {
+          startLineNumber: position.lineNumber,
+          endLineNumber: position.lineNumber,
+          startColumn: word.startColumn,
+          endColumn: word.endColumn,
+        };
+
+        const suggestions = Object.keys(chaiClasses).map((className) => {
+          const style = chaiClasses[className];
+          return {
+            label: className,
+            kind: monaco.languages.CompletionItemKind.Class,
+            insertText: className,
+            detail: `${style.type}: ${style.value};`,
+            range: range,
+          };
+        });
+
+        return { suggestions: suggestions };
+      },
+    });
+
     const editor = monaco.editor.create(document.getElementById("editor-container"), {
       value: defaultHtml,
       language: "html",
