@@ -55,6 +55,12 @@ const chaiClasses = {
   "chai-grid": { type: "display", value: "grid" },
   "chai-hidden": { type: "display", value: "none" },
 
+  // GRID TEMPLATE COLUMNS
+  "chai-grid-cols-1": { type: "gridTemplateColumns", value: "1fr" },
+  "chai-grid-cols-2": { type: "gridTemplateColumns", value: "1fr 1fr" },
+  "chai-grid-cols-3": { type: "gridTemplateColumns", value: "1fr 1fr 1fr" },
+  "chai-grid-cols-4": { type: "gridTemplateColumns", value: "1fr 1fr 1fr 1fr" },
+
   // FLEX JUSTIFY
   "chai-justify-start": { type: "justifyContent", value: "flex-start" },
   "chai-justify-center": { type: "justifyContent", value: "center" },
@@ -80,6 +86,18 @@ const chaiClasses = {
   "chai-border-2": { type: "border", value: "2px solid black" },
   "chai-border-4": { type: "border", value: "4px solid black" },
   "chai-border-none": { type: "border", value: "none" },
+
+  // BORDER RIGHT
+  "chai-border-r": { type: "borderRight", value: "1px solid black" },
+  "chai-border-r-2": { type: "borderRight", value: "2px solid black" },
+  "chai-border-r-4": { type: "borderRight", value: "4px solid black" },
+  "chai-border-r-none": { type: "borderRight", value: "none" },
+
+  // BORDER BOTTOM
+  "chai-border-b": { type: "borderBottom", value: "1px solid black" },
+  "chai-border-b-2": { type: "borderBottom", value: "2px solid black" },
+  "chai-border-b-4": { type: "borderBottom", value: "4px solid black" },
+  "chai-border-b-none": { type: "borderBottom", value: "none" },
 
   // BORDER RADIUS
   "chai-rounded-none": { type: "borderRadius", value: "0" },
@@ -111,16 +129,34 @@ const chaiClasses = {
   "chai-w-25": { type: "width", value: "25%" },
   "chai-w-50": { type: "width", value: "50%" },
   "chai-w-75": { type: "width", value: "75%" },
+  "chai-w-90": { type: "width", value: "90%" },
   "chai-w-100": { type: "width", value: "100%" },
   "chai-w-screen": { type: "width", value: "100vw" },
+
+  // MIN WIDTH
+  "chai-min-w-100": { type: "minWidth", value: "100px" },
+  "chai-min-w-200": { type: "minWidth", value: "200px" },
+  "chai-min-w-300": { type: "minWidth", value: "300px" },
+  "chai-min-w-400": { type: "minWidth", value: "400px" },
+  "chai-min-w-500": { type: "minWidth", value: "500px" },
+  "chai-min-w-screen": { type: "minWidth", value: "100vh" },
 
   // HEIGHT
   "chai-h-auto": { type: "height", value: "auto" },
   "chai-h-25": { type: "height", value: "25%" },
   "chai-h-50": { type: "height", value: "50%" },
   "chai-h-75": { type: "height", value: "75%" },
+  "chai-h-90": { type: "height", value: "90%" },
   "chai-h-100": { type: "height", value: "100%" },
   "chai-h-screen": { type: "height", value: "100vh" },
+
+  // MIN HEIGHT
+  "chai-min-h-100": { type: "minHeight", value: "100px" },
+  "chai-min-h-200": { type: "minHeight", value: "200px" },
+  "chai-min-h-300": { type: "minHeight", value: "300px" },
+  "chai-min-h-400": { type: "minHeight", value: "400px" },
+  "chai-min-h-500": { type: "minHeight", value: "500px" },
+  "chai-min-h-screen": { type: "minHeight", value: "100vh" },
 
   // CURSOR
   "chai-cursor-pointer": { type: "cursor", value: "pointer" },
