@@ -41,6 +41,10 @@ function setupPlayground() {
   require.config({ paths: { vs: "https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs" } });
 
   require(["vs/editor/editor.main"], function () {
+    if (window.emmetMonaco && typeof window.emmetMonaco.emmetHTML === "function") {
+      window.emmetMonaco.emmetHTML(monaco, ["html"]);
+    }
+
     monaco.languages.registerCompletionItemProvider("html", {
       provideCompletionItems: function (model, position) {
         const word = model.getWordUntilPosition(position);
