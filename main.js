@@ -46,15 +46,7 @@ function setupPlayground() {
     }
 
     monaco.languages.registerCompletionItemProvider("html", {
-      provideCompletionItems: function (model, position) {
-        const word = model.getWordUntilPosition(position);
-        const range = {
-          startLineNumber: position.lineNumber,
-          endLineNumber: position.lineNumber,
-          startColumn: word.startColumn,
-          endColumn: word.endColumn,
-        };
-
+      provideCompletionItems: function () {
         const suggestions = Object.keys(chaiClasses).map((className) => {
           const style = chaiClasses[className];
           return {
@@ -62,7 +54,6 @@ function setupPlayground() {
             kind: monaco.languages.CompletionItemKind.Class,
             insertText: className,
             detail: `${style.type}: ${style.value};`,
-            range: range,
           };
         });
 
@@ -70,7 +61,7 @@ function setupPlayground() {
       },
     });
 
-    const editor = monaco.editor.create(document.getElementById("editor-container"), {
+    const editor = monaco.editor.create(document.getElementById("chai-playground-editor"), {
       value: defaultHtml,
       language: "html",
       theme: "vs-dark",
